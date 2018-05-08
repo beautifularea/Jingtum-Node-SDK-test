@@ -5,5 +5,5 @@
 sudo make </br>
 sudo make install </br>
 
-2. npm install jingtum-sdk
+2. npm install --save jingtum-lib
 3. Done(代码参考TestCase)
