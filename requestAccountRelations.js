@@ -6,7 +6,7 @@ remote.connect(function(err, result) {
         return console.log('err:',err);
     }
     
-    var options = {account: 'jB7rxgh43ncbTX4WeMoeadiGMfmfqY2xLZ',type:'trust'};
+    var options = {account: 'jB7rxgh43ncbTX4WeMoeadiGMfmfqY2xLZ',type:'authorize'};
     var req = remote.requestAccountRelations(options);
     
     req.submit(function(err, result) {

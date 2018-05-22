@@ -3,19 +3,20 @@ var Remote = jlib.Remote;
 var remote = new Remote({server: 'ws://101.200.176.238:5020', local_sign:true});
 remote.connect(function(err, result) {
     if (err) {
+        remote.disconnect();
         return console.log('err:',err);
     }
     var tx = remote.buildPaymentTx({
-                    account: 'jB7rxgh43ncbTX4WeMoeadiGMfmfqY2xLZ',
+                    account: 'jPy8pR73VrArFjCskvpehZHx5MevDgVLhn',
                     to: 'jDUjqoDZLhzx4DCf6pvSivjkjgtRESY62c',
                     amount: {
-                    "value": 0.5,
-                    "currency": "SWT",
+                    "value": 0.01,
+                    "currency": "CCA",
                     "issuer": ""
                     }
             });
 
-    tx.setSecret('sn37nYrQ6KPJvTFmaBYokS3FjXUWd');
+    tx.setSecret('snoPBjXtMeMyMHUVTgbuqAfg1SUTb');
     tx.addMemo('给jDUjqoDZLhzx4DCf6pvSivjkjgtRESY62c支付0.5swt.');//可选
     
     tx.submit(function(err, result) {
@@ -24,5 +25,4 @@ remote.connect(function(err, result) {
 
         remote.disconnect();
     });
-
 });
